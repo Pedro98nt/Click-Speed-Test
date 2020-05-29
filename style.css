@@ -1,0 +1,85 @@
+@charset "UTF-8";
+body {
+  min-height: 100vh;
+  background-color: #222;
+  color: #FFF;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+  display: grid;
+  align-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+}
+
+header, footer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  align-items: center;
+}
+header > p, footer > p {
+  margin: 0;
+  text-align: center;
+}
+header > p span, footer > p span {
+  margin-bottom: 0.5em;
+  color: #DDD;
+  font-size: 0.8em;
+  display: inline-block;
+}
+header > p b, footer > p b {
+  font-size: 1.5em;
+}
+header div, footer div {
+  width: 1px;
+  height: 75%;
+  background-color: #666;
+}
+
+main > div {
+  width: 11rem;
+  height: 7rem;
+  margin: -1rem;
+  background-image: linear-gradient(-45deg, #F22, #F92, #FF2, #9F2, #2F2, #2F9, #2FF, #29F, #22F, #92F, #F2F, #F29, #F22, #F92, #FF2, #9F2, #2F2, #2F9, #2FF, #29F, #22F, #92F, #F2F, #F29, #F22);
+  background-position: 0 0;
+  background-size: 24rem 24rem;
+  border-radius: 2.3rem;
+  grid-area: 2/1/3/2;
+  transition: all 100ms;
+}
+main > div.active {
+  width: 13rem;
+  height: 9rem;
+  animation: hue-rotate calc(10000ms / var(--cps)) infinite linear;
+}
+@keyframes hue-rotate {
+  to {
+    background-position: 24rem 24rem;
+  }
+}
+main > button {
+  appearance: none;
+  width: 12rem;
+  height: 8rem;
+  background-color: #EEE;
+  border: 2px solid #222;
+  border-radius: 2rem;
+  box-shadow: 0 0 0 0 #FB2;
+  grid-area: 2/1/3/2;
+  font-size: 2em;
+  transition: box-shadow 100ms;
+}
+main > button:before {
+  content: "👆";
+}
+main > button:active:before {
+  content: "👇";
+}
+main > button:focus {
+  outline: none;
+}
